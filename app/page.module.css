@@ -1,141 +1,177 @@
 .page {
-  --background: #fafafa;
-  --foreground: #fff;
-
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
+	min-height: 100vh;
+	background: linear-gradient(180deg, #f0f8ff 0%, #ffffff 100%);
 }
 
-.main {
-  display: flex;
-  min-height: 100vh;
-  width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
+.hero {
+	margin-top: 55px;
+	height: 70vh;
+	min-height: 500px;
+	background: linear-gradient(
+		90deg,
+		rgba(201, 229, 242, 1) 0%,
+		rgba(122, 182, 245, 1) 50%,
+		rgba(43, 150, 237, 1) 100%
+	);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	position: relative;
+	overflow: hidden;
 }
 
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
+.hero::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: url('/images/beach-2.jpg') center/cover;
+	opacity: 0.2;
+	z-index: 0;
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
+.heroContent {
+	position: relative;
+	z-index: 1;
+	text-align: center;
 }
 
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
+.heroTitle {
+	font-size: 3.5rem;
+	font-weight: 700;
+	margin-top: -3rem;
+	margin-bottom: 1rem;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
+.heroSubtitle {
+	font-size: 1.5rem;
+	font-weight: 300;
+	opacity: 0.95;
 }
 
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
+.section {
+	padding: 5rem 0;
+	scroll-margin-top: 80px;
 }
 
-.ctas a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 2rem;
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.sectionTitle {
+	font-size: 2.5rem;
+	font-weight: 700;
+	color: #1e3a8a;
+	text-align: center;
+	margin-bottom: 3rem;
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+.contactsContent {
+	max-width: 800px;
+	margin: 0 auto;
+	text-align: center;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
+.contactsDescription {
+	font-size: 1.125rem;
+	color: #334155;
+	margin-bottom: 2rem;
+	line-height: 1.8;
 }
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
-  }
-
-  .intro {
-    gap: 16px;
-  }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
-  }
+.contactLinks {
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+	flex-wrap: wrap;
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
+.contactLink {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	padding: 1rem 2rem;
+	background: white;
+	color: #1e40af;
+	text-decoration: none;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+	font-weight: 500;
+}
 
-  .page {
-    --background: #000;
-    --foreground: #000;
+.contactLink:hover {
+	background: #3b82f6;
+	color: white;
+	transform: translateY(-2px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
 
-    --text-primary: #ededed;
-    --text-secondary: #999;
+.contactLink svg {
+	flex-shrink: 0;
+}
 
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
-  }
+.footer {
+	background: #1e3a8a;
+	color: white;
+	padding: 2rem 0;
+	text-align: center;
+}
+
+.footer p {
+	margin: 0;
+	opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+	.heroTitle {
+		font-size: 2.5rem;
+	}
+
+	.heroSubtitle {
+		font-size: 1.25rem;
+	}
+
+	.contactLinks {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.contactLink {
+		justify-content: center;
+	}
+
+	.sectionTitle {
+		font-size: 2rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.hero {
+		height: 60vh;
+		min-height: 400px;
+	}
+
+	.heroTitle {
+		font-size: 2rem;
+	}
+
+	.heroSubtitle {
+		font-size: 1rem;
+	}
+
+	.container {
+		padding: 0 1rem;
+	}
+
+	.section {
+		padding: 3rem 0;
+	}
 }
