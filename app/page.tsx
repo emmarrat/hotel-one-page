@@ -46,7 +46,7 @@ export default function Home() {
 								rel='noopener noreferrer'
 								className={styles.contactLink}
 							>
-								<InstagramIcon size={24} />
+								<InstagramIcon width={24} height={24} />
 								Instagram
 							</a>
 							<a
@@ -55,7 +55,7 @@ export default function Home() {
 								rel='noopener noreferrer'
 								className={styles.contactLink}
 							>
-								<WhatsAppIcon />
+								<WhatsAppIcon width={24} height={24} />
 								WhatsApp
 							</a>
 						</div>
